@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Toru KAWAMURA"]
   spec.email         = ["tkawa@4bit.net"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Faraday middleware that supports hypermedia client}
+  spec.description   = %q{Faraday middleware that supports hypermedia client}
+  spec.homepage      = "https://github.com/tkawa/faraday-hypermedia"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -27,7 +27,16 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "faraday", ">= 0.8.0"
+  spec.add_dependency 'faraday_middleware'
+  spec.add_dependency 'http_link_header'
+  spec.add_dependency 'faraday_collection_json'
+  spec.add_dependency 'uri_template'
+
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency 'awesome_print'
+  spec.add_development_dependency 'faraday-detailed_logger'
+  spec.add_development_dependency 'faraday-http-cache'
 end
