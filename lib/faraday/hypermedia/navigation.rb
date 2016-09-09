@@ -7,10 +7,6 @@ module Faraday
         super(app)
         puts 'Navigation Enabled!'
         @history = history || History.new
-        # state = self
-        # connection.define_singleton_method(:history) do
-        #   state.history
-        # end
       end
 
       def call(request_env)
